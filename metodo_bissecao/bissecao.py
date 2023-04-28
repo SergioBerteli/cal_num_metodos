@@ -1,10 +1,8 @@
 from tabulate import tabulate
 from sympy import Symbol, limit, sympify, rootof
+from sympy.polys.polyerrors import PolynomialError
+from sympy.core.sympify import Basic
 from math import ceil, floor
-
-if __name__ == '__main__':
-    x = Symbol('x')
-    expressao = sympify(input("Insira a funcao: "))
 
 
 def insere_valor_na_func(valor: int) -> float:
@@ -61,14 +59,21 @@ def bissecao(a, b, tol_error):
     return tabela_final, res_final[0]
 
 
-def pega_intervalo():
-    raiz = rootof(expressao, 0)
+def pega_intervalo(expr):
+    raiz = rootof(expr, 0)
     return floor(raiz), ceil(raiz)
 
 
 if __name__ == '__main__':
-    a, b = pega_intervalo()
+    x = Symbol('x')
+    expressao: Basic = sympify(input("Insira a funcao: "))
     erro_t = float(input('Insira o erro desejado em porcentagem: '))
+    try:
+        a, b = pega_intervalo(expressao)
+    except PolynomialError:
+        a, b = -100, 100
+        root_temp = bissecao(a, b, erro_t)[1]
+        a, b = floor(root_temp), ceil(root_temp)
     print(bissecao(a, b, erro_t)[0])
     print(bissecao(a, b, erro_t)[1])
 
