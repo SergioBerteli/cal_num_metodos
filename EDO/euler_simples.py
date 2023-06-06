@@ -77,7 +77,7 @@ def main():
     y_final = res[-1][2]
     tab = tabulate(res , headers=head)
     print(tab)
-    print(f"y({ponto_parada}) = {y_final}") 
+    print(f"y({ponto_parada}) = {float(y_final)}") 
     return True
 
 
