@@ -1,4 +1,4 @@
-from euler_simples import x, y, e, numero_de_euler, tabulate, Symbol, sympify, Basic
+from euler_simples import x, y, e, numero_de_euler, tabulate, Symbol, sympify, Basic, cos, sin
 
 def runge_kutta(func: Basic, y_0: float, h: float, ponto_parada: float, sol_analitica: Basic = None) -> list[list]:
     """

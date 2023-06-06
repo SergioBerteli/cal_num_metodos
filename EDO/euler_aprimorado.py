@@ -1,4 +1,4 @@
-from euler_simples import x, y, e, numero_de_euler, tabulate, Symbol, sympify, Basic
+from euler_simples import x, y, e, numero_de_euler, tabulate, Symbol, sympify, Basic, cos, sin
 
 
 
