@@ -1,4 +1,4 @@
-from sympy import Symbol, sympify, rootof, diff
+from sympy import Symbol, sympify
 from sympy.core.sympify import Basic
 from tabulate import tabulate
 from math import e as numero_de_euler
@@ -83,4 +83,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print(e)
