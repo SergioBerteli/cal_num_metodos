@@ -1,7 +1,5 @@
-from sympy import sympify, limit, diff, Symbol
+from sympy import sympify, limit, Symbol
 from sympy.core.sympify import Basic
-from sympy.core.function import Derivative
-from typing import Union
 
 x = Symbol('x')
 
