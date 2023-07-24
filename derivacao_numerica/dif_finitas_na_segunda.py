@@ -1,4 +1,3 @@
-from mypyc.irbuild import expression
 from sympy import Symbol, limit, sympify, rootof, diff
 from sympy.polys.polyerrors import PolynomialError
 from sympy.core.sympify import Basic
